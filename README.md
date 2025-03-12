@@ -12,6 +12,7 @@ To address this question, we will frame the problem as a regression task where t
 assists, result, wardsplaced, wpm, wardskilled, wcpm, kills, controlwardsbought, visionscore, gamelength, more_kills, and more_vision.
 Below is the head of DataFrame we are using in this section:
 
+<div align="center">
 | index | assists | result | wardsplaced |   wpm  | wardskilled |  wcpm  | kills | controlwardsbought | visionscore | gamelength | more_vision | more_kills |
 |-------|---------|--------|-------------|--------|-------------|--------|-------|--------------------|-------------|------------|-------------|------------|
 | 32650 | 60      | True   | 151.0       | 3.7956 | 47.0        | 1.1814 | 21    | 31.0               | 304.0       | 2387       | False       | True       |
@@ -19,7 +20,7 @@ Below is the head of DataFrame we are using in this section:
 | 32662 | 11      | False  | 99.0        | 3.3712 | 25.0        | 0.8513 | 9     | 23.0               | 188.0       | 1762       | False       | False      |
 | 32663 | 53      | True   | 117.0       | 3.9841 | 31.0        | 1.0556 | 24    | 29.0               | 254.0       | 1762       | True        | True       |
 | 32674 | 53      | False  | 160.0       | 3.6309 | 45.0        | 1.0212 | 24    | 50.0               | 313.0       | 2644       | False       | True       |
-
+</div>
 
 To mitigate overfitting, the data will be split into 75% training and 25% test sets. Our model’s performance will be evaluated using regression metrics such as Mean Absolute Error (MAE), Root Mean Squared Error (RMSE), and the R² score. These metrics will help us understand the predictive accuracy and the variance explained by our model.
 
