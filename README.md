@@ -96,13 +96,105 @@ wSkilled = wardsplaced
 mVision = more_vision
 mKills = more_kills
 
-| index | assists | result | wPlaced |   wpm  | wSkilled |  wcpm  | kills | cBought | visionscore | gamelength | mVision | mKills |
-|-------|---------|--------|---------|--------|----------|--------|-------|---------|-------------|------------|---------|--------|
-| 32650 | 60      | True   | 151.0   | 3.7956 | 47.0     | 1.1814 | 21    | 31.0    | 304.0       | 2387       | False   | True   |
-| 32651 | 23      | False  | 139.0   | 3.4939 | 57.0     | 1.4328 | 13    | 35.0    | 359.0       | 2387       | True    | False  |
-| 32662 | 11      | False  | 99.0    | 3.3712 | 25.0     | 0.8513 | 9     | 23.0    | 188.0       | 1762       | False   | False  |
-| 32663 | 53      | True   | 117.0   | 3.9841 | 31.0     | 1.0556 | 24    | 29.0    | 254.0       | 1762       | True    | True   |
-| 32674 | 53      | False  | 160.0   | 3.6309 | 45.0     | 1.0212 | 24    | 50.0    | 313.0       | 2644       | False   | True   |
+<div style="text-align: center;">
+  <table style="margin: 0 auto; border-collapse: collapse;">
+    <thead>
+      <tr>
+        <th style="border: 1px solid #ccc; padding: 4px;">index</th>
+        <th style="border: 1px solid #ccc; padding: 4px;">assists</th>
+        <th style="border: 1px solid #ccc; padding: 4px;">result</th>
+        <th style="border: 1px solid #ccc; padding: 4px;">wPlaced</th>
+        <th style="border: 1px solid #ccc; padding: 4px;">wpm</th>
+        <th style="border: 1px solid #ccc; padding: 4px;">wSkilled</th>
+        <th style="border: 1px solid #ccc; padding: 4px;">wcpm</th>
+        <th style="border: 1px solid #ccc; padding: 4px;">kills</th>
+        <th style="border: 1px solid #ccc; padding: 4px;">cBought</th>
+        <th style="border: 1px solid #ccc; padding: 4px;">visionscore</th>
+        <th style="border: 1px solid #ccc; padding: 4px;">gamelength</th>
+        <th style="border: 1px solid #ccc; padding: 4px;">mVision</th>
+        <th style="border: 1px solid #ccc; padding: 4px;">mKills</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border: 1px solid #ccc; padding: 4px;">32650</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">60</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">True</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">151.0</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">3.7956</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">47.0</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">1.1814</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">21</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">31.0</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">304.0</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">2387</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">False</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">True</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #ccc; padding: 4px;">32651</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">23</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">False</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">139.0</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">3.4939</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">57.0</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">1.4328</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">13</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">35.0</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">359.0</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">2387</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">True</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">False</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #ccc; padding: 4px;">32662</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">11</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">False</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">99.0</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">3.3712</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">25.0</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">0.8513</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">9</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">23.0</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">188.0</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">1762</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">False</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">False</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #ccc; padding: 4px;">32663</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">53</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">True</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">117.0</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">3.9841</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">31.0</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">1.0556</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">24</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">29.0</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">254.0</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">1762</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">True</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">True</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #ccc; padding: 4px;">32674</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">53</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">False</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">160.0</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">3.6309</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">45.0</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">1.0212</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">24</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">50.0</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">313.0</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">2644</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">False</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">True</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 
 
 To mitigate overfitting, the data will be split into 75% training and 25% test sets. Our model’s performance will be evaluated using regression metrics such as Mean Absolute Error (MAE), Root Mean Squared Error (RMSE), and the R² score. These metrics will help us understand the predictive accuracy and the variance explained by our model.
