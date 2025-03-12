@@ -79,8 +79,6 @@ The plot shows that around 78% of the time, the team that has a higher `visionsc
 
 We used `more_vision` to groupby the dataset (As a reminder, True means the team had a higher vision score than their opponent). While we see that the team with a higher vision score did end up winning more and having more kills, what is interesting is that they actually placed less wards and killed less wards. One possible reason for this may be because a losing team felt that they had to keep placing wards in order to get back into game and they were able to find more wards due to their opponents placing wards closer to their base.
 
-## Assignment of Missingness
-
 
 ## Framing a Prediction Problem
 Can we accurately predict a team's vision score based solely on their in-game performance statistics?
