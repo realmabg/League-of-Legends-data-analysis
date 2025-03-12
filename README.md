@@ -9,7 +9,17 @@ Can we accurately predict a team's vision score based solely on their in-game pe
 For our prediction model, we will perform necessary preprocessing steps such as dropping non-informative or metadata columns like gameid and url. This ensures that our model leverages only the relevant in-game statistics.
 
 To address this question, we will frame the problem as a regression task where the vision score is treated as a continuous variable. Our dataset includes the following columns:
-assists, result, wardsplaced, wpm, wardskilled, wcpm, kills, controlwardsbought, visionscore, gamelength, more_kills, and more_vision
+assists, result, wardsplaced, wpm, wardskilled, wcpm, kills, controlwardsbought, visionscore, gamelength, more_kills, and more_vision.
+Below is the head of DataFrame we are using in this section:
+
+| index | assists | result | wardsplaced |   wpm  | wardskilled |  wcpm  | kills | controlwardsbought | visionscore | gamelength | more_vision | more_kills |
+|-------|---------|--------|-------------|--------|-------------|--------|-------|--------------------|-------------|------------|-------------|------------|
+| 32650 | 60      | True   | 151.0       | 3.7956 | 47.0        | 1.1814 | 21    | 31.0               | 304.0       | 2387       | False       | True       |
+| 32651 | 23      | False  | 139.0       | 3.4939 | 57.0        | 1.4328 | 13    | 35.0               | 359.0       | 2387       | True        | False      |
+| 32662 | 11      | False  | 99.0        | 3.3712 | 25.0        | 0.8513 | 9     | 23.0               | 188.0       | 1762       | False       | False      |
+| 32663 | 53      | True   | 117.0       | 3.9841 | 31.0        | 1.0556 | 24    | 29.0               | 254.0       | 1762       | True        | True       |
+| 32674 | 53      | False  | 160.0       | 3.6309 | 45.0        | 1.0212 | 24    | 50.0               | 313.0       | 2644       | False       | True       |
+
 
 To mitigate overfitting, the data will be split into 75% training and 25% test sets. Our model’s performance will be evaluated using regression metrics such as Mean Absolute Error (MAE), Root Mean Squared Error (RMSE), and the R² score. These metrics will help us understand the predictive accuracy and the variance explained by our model.
 
