@@ -90,103 +90,17 @@ For our prediction model, we will perform necessary preprocessing steps such as 
 To address this question, we will frame the problem as a regression task where the vision score is treated as a continuous variable. Our dataset includes the following columns:
 assists, result, wardsplaced, wpm, wardskilled, wcpm, kills, controlwardsbought, visionscore, gamelength, more_kills, and more_vision.
 Below is the head of DataFrame we are using in this section:
+cwardsbought = controlwardsbought
+wplaced = wardskilled
+wskilled = wardsplaced
 
-<table style="margin: 0 auto;">
-  <thead>
-    <tr>
-      <th>index</th>
-      <th>assists</th>
-      <th>result</th>
-      <th>wardsplaced</th>
-      <th>wpm</th>
-      <th>wardskilled</th>
-      <th>wcpm</th>
-      <th>kills</th>
-      <th>controlwardsbought</th>
-      <th>visionscore</th>
-      <th>gamelength</th>
-      <th>more_vision</th>
-      <th>more_kills</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>32650</td>
-      <td>60</td>
-      <td>True</td>
-      <td>151.0</td>
-      <td>3.7956</td>
-      <td>47.0</td>
-      <td>1.1814</td>
-      <td>21</td>
-      <td>31.0</td>
-      <td>304.0</td>
-      <td>2387</td>
-      <td>False</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <td>32651</td>
-      <td>23</td>
-      <td>False</td>
-      <td>139.0</td>
-      <td>3.4939</td>
-      <td>57.0</td>
-      <td>1.4328</td>
-      <td>13</td>
-      <td>35.0</td>
-      <td>359.0</td>
-      <td>2387</td>
-      <td>True</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <td>32662</td>
-      <td>11</td>
-      <td>False</td>
-      <td>99.0</td>
-      <td>3.3712</td>
-      <td>25.0</td>
-      <td>0.8513</td>
-      <td>9</td>
-      <td>23.0</td>
-      <td>188.0</td>
-      <td>1762</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <td>32663</td>
-      <td>53</td>
-      <td>True</td>
-      <td>117.0</td>
-      <td>3.9841</td>
-      <td>31.0</td>
-      <td>1.0556</td>
-      <td>24</td>
-      <td>29.0</td>
-      <td>254.0</td>
-      <td>1762</td>
-      <td>True</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <td>32674</td>
-      <td>53</td>
-      <td>False</td>
-      <td>160.0</td>
-      <td>3.6309</td>
-      <td>45.0</td>
-      <td>1.0212</td>
-      <td>24</td>
-      <td>50.0</td>
-      <td>313.0</td>
-      <td>2644</td>
-      <td>False</td>
-      <td>True</td>
-    </tr>
-  </tbody>
-</table>
+| index | assists | result | wplaced |   wpm  | wskilled |  wcpm  | kills | cwardsbought | visionscore | gamelength | more_vision | more_kills |
+|-------|---------|--------|---------|--------|----------|--------|-------|--------------|-------------|------------|-------------|------------|
+| 32650 | 60      | True   | 151.0   | 3.7956 | 47.0     | 1.1814 | 21    | 31.0         | 304.0       | 2387       | False       | True       |
+| 32651 | 23      | False  | 139.0   | 3.4939 | 57.0     | 1.4328 | 13    | 35.0         | 359.0       | 2387       | True        | False      |
+| 32662 | 11      | False  | 99.0    | 3.3712 | 25.0     | 0.8513 | 9     | 23.0         | 188.0       | 1762       | False       | False      |
+| 32663 | 53      | True   | 117.0   | 3.9841 | 31.0     | 1.0556 | 24    | 29.0         | 254.0       | 1762       | True        | True       |
+| 32674 | 53      | False  | 160.0   | 3.6309 | 45.0     | 1.0212 | 24    | 50.0         | 313.0       | 2644       | False       | True       |
 
 
 To mitigate overfitting, the data will be split into 75% training and 25% test sets. Our model’s performance will be evaluated using regression metrics such as Mean Absolute Error (MAE), Root Mean Squared Error (RMSE), and the R² score. These metrics will help us understand the predictive accuracy and the variance explained by our model.
