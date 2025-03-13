@@ -15,22 +15,39 @@ Understanding this relationship can help players and analysts assess whether vis
 The key columns relevant to this analysis include:
 
 `gameid`: Unique identifier for each game.
+
 `side`: Whether the team played on the blue or red side.
+
 `assists`: The number of assists a team accumulated.
+
 `result`: Whether the team won (1) or lost (0) the game.
+
 `wardsplaced`: The total number of wards a team placed during the game.
+
 `wpm` (Wards per Minute): The rate at which a team placed wards.
+
 `wardskilled`: The number of enemy wards cleared.
+
 `wcpm` (Wards Cleared per Minute): The rate at which a team cleared enemy wards.
+
 `kills`: The total number of kills a team secured.
+
 `controlwardsbought`: The number of control wards purchased.
+
 `visionscore`: A score reflecting a team’s vision contribution, considering wards placed, cleared, and revealed.
+
 `vspm` (Vision Score per Minute): Vision score adjusted for game length.
+
 `position`: The role of the player (Top, Jungle, Mid, Bot, Support), or denoting if a row correlated to a team's statistics in a game.
+
 `gamelength`: The duration of the match.
+
 `year`: The year in which the game took place.
+
 `url`: A link to the source page for the game’s statistics.
+
 `league`: The professional league in which the game occurred.
+
 `datacompleteness`: A boolean value indicating whether all data points for a match are available
 
 
