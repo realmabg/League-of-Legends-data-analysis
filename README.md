@@ -116,9 +116,38 @@ To test this, we chose a significance level of 0.05 and used Total Variation Dis
 |   2025 |               0.00307 |              0.05695 |
 
 
-Our observed statistic using TVD 
+Here is a bar graph for easier observations:
 
-sample stat: 0.855
+<iframe
+  src="assets/observed_bar_graph.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+
+
+Our observed statistic using TVD is 0.855. After we performed our permutation tests, we found the p-value to be 0.
+
+Below is the empirical distribution of the TVD for the test.
+
+<iframe
+  src="assets/url_year_graph.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+Here is a zoom in on the graph of the TVDs we found in our permutations.
+
+<iframe
+  src="assets/zoomed_in_url_year_graph.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+
 
 
 The significance level we choose for both permutation tests is 0.5, and the test statistic is Total Variance Distance (TVD).
