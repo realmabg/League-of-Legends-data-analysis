@@ -95,7 +95,6 @@ We are going to test if the `url` being missing depends on other columns. The tw
 
 First, we did a permutation test on `url` and `year`
 
-
 Null Hypothesis: The distribution of `year` when `url` is missing is the same as the distribution of `year` when `url` is not missing.
 
 Alternative Hypothesis: The distribution of `year` when `url` is missing is NOT same as the distribution of `year` when `url` is not missing.
@@ -126,7 +125,6 @@ Here is a bar graph for easier observations:
 ></iframe>
 
 
-
 Our observed statistic using TVD is 0.855. After we performed our permutation tests, we found the p-value to be 0.
 
 Below is the empirical distribution of the TVD for the test.
@@ -147,12 +145,46 @@ Here is a zoom in on the graph of the TVDs we found in our permutations.
   frameborder="0"
 ></iframe>
 
+Since the p-value is less than the 0.05 significance level, we reject the null hypothesis. We conclude that the missingness of `url` depends on the `year` column.
 
 
+Next, we did a permutation test on `url` and the `more_vision` column we created earlier.
 
-The significance level we choose for both permutation tests is 0.5, and the test statistic is Total Variance Distance (TVD).
 
-First, we perform the permutation test on firstblood and league, and the missingness of firstblood does depend on league.
+Null Hypothesis: The distribution of `more_vision` when `url` is missing is the same as the distribution of `more_vision` when `url` is not missing.
+
+Alternative Hypothesis: The distribution of `more_vision` when `url` is missing is NOT same as the distribution of `more_vision` when `url` is not missing.
+
+Again, we chose a significance level of 0.05 and used Total Variation Distance (TVD) as our test statistic.
+
+
+| more_vision   |   url_missing = False |   url_missing = True |
+|:--------------|----------------------:|---------------------:|
+| False         |              0.525808 |             0.524212 |
+| True          |              0.474192 |             0.475788 |
+
+
+<iframe
+  src="assets/observed_bar_graph2.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+
+Our observed statistic using TVD is 0.0016. After we performed our permutation tests, we found the p-value to be 0.545
+
+Below is the empirical distribution of the TVD for the test.
+
+<iframe
+  src="assets/url_more_vision_distribution.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+Since the p-value is bigger than the 0.05 significance level, we fail to reject the null hypothesis. We conclude that the missingness of `url` does not depend on the `year` column.
+
 
 
 
