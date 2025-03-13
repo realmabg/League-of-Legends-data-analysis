@@ -1,15 +1,38 @@
 # League of Legends Vision Score Data Analysis
 
+Authors: Adrian Kong & Borngreat Omoma-Edosa
+
 ## Introduction
 
-Explain how team's vision score needs to be at least 0
+League of Legends is a popular multiplayer online battle arena (MOBA) game developed by Riot Games. Vision control plays a crucial role in securing strategic advantages, allowing teams to track enemy movements, contest objectives, and avoid ambushes. The game's vision score quantifies a team's overall contribution to vision through ward placement, clearing enemy wards, and revealing unseen areas of the map.
 
-Explain why if losing there will be more wards found
+Our dataset, developed by Oracle’s Elixir, contains 1,013,856 rows of match data from professional League of Legends esports games through 2025. This dataset includes a wide range of statistics, including individual player performance, team-level metrics, and match outcomes. While vision score is often assumed to be a key factor in winning games, its relationship with performance may not be so straightforward. If teams consistently have higher vision scores when losing, it could indicate that vision control is more of a reactionary tool rather than a predictor of success.
 
-Terms: TODO/explain
+This project explores the question: How much does a team's vision score reflect its overall performance?
 
-["gameid","side","assists","result",'wardsplaced', 'wpm', 'wardskilled', 'wcpm', "kills",
-       'controlwardsbought', 'visionscore', 'vspm',"position","gamelength","year","url","league","datacompleteness","position"]
+Understanding this relationship can help players and analysts assess whether vision score is a reliable indicator of game state ogrear a symptom of a team trying to recover from a disadvantage. If teams place and clear more wards when they are losing, it may suggest that vision control is a byproduct of needing to catch up rather than a direct contributor to winning.
+
+The key columns relevant to this analysis include:
+
+`gameid`: Unique identifier for each game.
+`side`: Whether the team played on the blue or red side.
+`assists`: The number of assists a team accumulated.
+`result`: Whether the team won (1) or lost (0) the game.
+`wardsplaced`: The total number of wards a team placed during the game.
+`wpm` (Wards per Minute): The rate at which a team placed wards.
+`wardskilled`: The number of enemy wards cleared.
+`wcpm` (Wards Cleared per Minute): The rate at which a team cleared enemy wards.
+`kills`: The total number of kills a team secured.
+`controlwardsbought`: The number of control wards purchased.
+`visionscore`: A score reflecting a team’s vision contribution, considering wards placed, cleared, and revealed.
+`vspm` (Vision Score per Minute): Vision score adjusted for game length.
+`position`: The role of the player (Top, Jungle, Mid, Bot, Support), or denoting if a row correlated to a team's statistics in a game.
+`gamelength`: The duration of the match.
+`year`: The year in which the game took place.
+`url`: A link to the source page for the game’s statistics.
+`league`: The professional league in which the game occurred.
+`datacompleteness`: A boolean value indicating whether all data points for a match are available
+
 
 ## Data Cleaning and Exploratory Data Analysis
 
@@ -86,9 +109,6 @@ We used `more_vision` to groupby the dataset (As a reminder, True means the team
 
 We think that the column `url` is Not Missing at Random (NMAR). There are many reasons why a game will not have a url linked to their game; there is not infrastructure for it, the league is not popular enough, etc. 
 
-## TODO: explain more
-Does url missing dpened on vision score, does it depend on year
-
 ### Missingness Dependency
 
 We are going to test if the `url` being missing depends on other columns. The two columns that we chose are `visionscore` and `year`. 
@@ -123,7 +143,6 @@ Here is a bar graph for easier observations:
   height="600"
   frameborder="0"
 ></iframe>
-
 
 Our observed statistic using TVD is 0.855. After we performed our permutation tests, we found the p-value to be 0.
 
@@ -171,7 +190,6 @@ Again, we chose a significance level of 0.05 and used Total Variation Distance (
   frameborder="0"
 ></iframe>
 
-
 Our observed statistic using TVD is 0.0016. After we performed our permutation tests, we found the p-value to be 0.545
 
 Below is the empirical distribution of the TVD for the test.
@@ -182,14 +200,41 @@ Below is the empirical distribution of the TVD for the test.
   height="600"
   frameborder="0"
 ></iframe>
-
 Since the p-value is bigger than the 0.05 significance level, we fail to reject the null hypothesis. We conclude that the missingness of `url` does not depend on the `year` column.
 
+## Hypothesis Testing
 
+In this hypothesis test, we look to see if there is a significant difference in the distribution of kills for a team with a higher vision score and the team that has the lower vision score. This is important because we want to see if having a higher vision score results in some sort of strategic and competitive advantage for a team in a League of Legends match, and the ultimate advantage results in a win.
 
+Null Hypothesis: The distribution of kills for a team with the higher vision score in a game is the same as the team that has the lower vision score.
 
+Alternate Hypothesis: The distribution of kills for the team with the higher vision score is NOT the same as the team that has the lower vision score.
 
+We are going to use absolute mean difference between the kills in teams with the higher vision score and kills in teams with a lower vision score as the test statistic. We will also use a significance level of 0.05.
 
+Our observed test statistic was 0.415.
+
+Here is a histogram containing the distribution of our test statistics along with the observed statistic:
+
+<iframe
+  src="assets/hypothesis_distribution.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+Here is a zoom in on the graph of the absolute difference in means we found in our permutations:
+
+<iframe
+  src="assets/hypothesis_distribution_zoom_in.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+After we performed our permutation tests, we found the p-value to be 0.
+
+Since the p-value is smaller than the 0.05 significance level, we reject the null hypothesis. There is statistical evidence to suggest that the distribution of kills for the team with the higher vision score is NOT the same as the team with the lower vision score. This finding tekks us to consider that having a higher vision score than the other team can result in an advantage in a League of Legends game, and ultimately winning.
 
 ## Framing a Prediction Problem
 Can we accurately predict a team's vision score based solely on their in-game performance statistics?
