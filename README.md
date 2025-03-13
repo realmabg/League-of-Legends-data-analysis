@@ -79,6 +79,7 @@ The plot shows that around 78% of the time, the team that has a higher `visionsc
 
 We used `more_vision` to groupby the dataset (As a reminder, True means the team had a higher vision score than their opponent). While we see that the team with a higher vision score did end up winning more and having more kills, what is interesting is that they actually placed less wards and killed less wards. One possible reason for this may be because a losing team felt that they had to keep placing wards in order to get back into game and they were able to find more wards due to their opponents placing wards closer to their base.
 
+<<<<<<< HEAD
 ## Assignment of Missingness
 
 ### NMAR Analysis
@@ -127,6 +128,8 @@ First, we perform the permutation test on firstblood and league, and the missing
 
 
 
+=======
+>>>>>>> a350377b83f7eed8d1067b47bcc3bbae02000f5f
 
 ## Framing a Prediction Problem
 Can we accurately predict a team's vision score based solely on their in-game performance statistics?
@@ -136,103 +139,111 @@ For our prediction model, we will perform necessary preprocessing steps such as 
 To address this question, we will frame the problem as a regression task where the vision score is treated as a continuous variable. Our dataset includes the following columns:
 assists, result, wardsplaced, wpm, wardskilled, wcpm, kills, controlwardsbought, visionscore, gamelength, more_kills, and more_vision.
 Below is the head of DataFrame we are using in this section:
+cBought = controlwardsbought
+wPlaced = wardskilled
+wSkilled = wardsplaced
+mVision = more_vision
+mKills = more_kills
 
-<table style="margin: 0 auto;">
-  <thead>
-    <tr>
-      <th>index</th>
-      <th>assists</th>
-      <th>result</th>
-      <th>wardsplaced</th>
-      <th>wpm</th>
-      <th>wardskilled</th>
-      <th>wcpm</th>
-      <th>kills</th>
-      <th>controlwardsbought</th>
-      <th>visionscore</th>
-      <th>gamelength</th>
-      <th>more_vision</th>
-      <th>more_kills</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>32650</td>
-      <td>60</td>
-      <td>True</td>
-      <td>151.0</td>
-      <td>3.7956</td>
-      <td>47.0</td>
-      <td>1.1814</td>
-      <td>21</td>
-      <td>31.0</td>
-      <td>304.0</td>
-      <td>2387</td>
-      <td>False</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <td>32651</td>
-      <td>23</td>
-      <td>False</td>
-      <td>139.0</td>
-      <td>3.4939</td>
-      <td>57.0</td>
-      <td>1.4328</td>
-      <td>13</td>
-      <td>35.0</td>
-      <td>359.0</td>
-      <td>2387</td>
-      <td>True</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <td>32662</td>
-      <td>11</td>
-      <td>False</td>
-      <td>99.0</td>
-      <td>3.3712</td>
-      <td>25.0</td>
-      <td>0.8513</td>
-      <td>9</td>
-      <td>23.0</td>
-      <td>188.0</td>
-      <td>1762</td>
-      <td>False</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <td>32663</td>
-      <td>53</td>
-      <td>True</td>
-      <td>117.0</td>
-      <td>3.9841</td>
-      <td>31.0</td>
-      <td>1.0556</td>
-      <td>24</td>
-      <td>29.0</td>
-      <td>254.0</td>
-      <td>1762</td>
-      <td>True</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <td>32674</td>
-      <td>53</td>
-      <td>False</td>
-      <td>160.0</td>
-      <td>3.6309</td>
-      <td>45.0</td>
-      <td>1.0212</td>
-      <td>24</td>
-      <td>50.0</td>
-      <td>313.0</td>
-      <td>2644</td>
-      <td>False</td>
-      <td>True</td>
-    </tr>
-  </tbody>
-</table>
+<div style="text-align: center;">
+  <table style="margin: 0 auto; border-collapse: collapse;">
+    <thead>
+      <tr>
+        <th style="border: 1px solid #ccc; padding: 4px;">index</th>
+        <th style="border: 1px solid #ccc; padding: 4px;">assists</th>
+        <th style="border: 1px solid #ccc; padding: 4px;">result</th>
+        <th style="border: 1px solid #ccc; padding: 4px;">wPlaced</th>
+        <th style="border: 1px solid #ccc; padding: 4px;">wpm</th>
+        <th style="border: 1px solid #ccc; padding: 4px;">wSkilled</th>
+        <th style="border: 1px solid #ccc; padding: 4px;">wcpm</th>
+        <th style="border: 1px solid #ccc; padding: 4px;">kills</th>
+        <th style="border: 1px solid #ccc; padding: 4px;">cBought</th>
+        <th style="border: 1px solid #ccc; padding: 4px;">visionscore</th>
+        <th style="border: 1px solid #ccc; padding: 4px;">gamelength</th>
+        <th style="border: 1px solid #ccc; padding: 4px;">mVision</th>
+        <th style="border: 1px solid #ccc; padding: 4px;">mKills</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border: 1px solid #ccc; padding: 4px;">32650</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">60</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">True</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">151.0</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">3.7956</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">47.0</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">1.1814</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">21</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">31.0</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">304.0</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">2387</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">False</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">True</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #ccc; padding: 4px;">32651</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">23</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">False</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">139.0</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">3.4939</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">57.0</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">1.4328</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">13</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">35.0</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">359.0</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">2387</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">True</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">False</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #ccc; padding: 4px;">32662</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">11</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">False</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">99.0</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">3.3712</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">25.0</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">0.8513</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">9</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">23.0</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">188.0</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">1762</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">False</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">False</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #ccc; padding: 4px;">32663</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">53</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">True</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">117.0</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">3.9841</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">31.0</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">1.0556</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">24</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">29.0</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">254.0</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">1762</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">True</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">True</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #ccc; padding: 4px;">32674</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">53</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">False</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">160.0</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">3.6309</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">45.0</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">1.0212</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">24</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">50.0</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">313.0</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">2644</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">False</td>
+        <td style="border: 1px solid #ccc; padding: 4px;">True</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 
 
 To mitigate overfitting, the data will be split into 75% training and 25% test sets. Our model’s performance will be evaluated using regression metrics such as Mean Absolute Error (MAE), Root Mean Squared Error (RMSE), and the R² score. These metrics will help us understand the predictive accuracy and the variance explained by our model.
