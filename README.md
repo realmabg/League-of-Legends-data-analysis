@@ -81,6 +81,52 @@ We used `more_vision` to groupby the dataset (As a reminder, True means the team
 
 ## Assignment of Missingness
 
+### NMAR Analysis
+
+We think that the column `url` is Not Missing at Random (NMAR). There are many reasons why a game will not have a url linked to their game; there is not infrastructure for it, the league is not popular enough, etc. 
+
+## TODO: explain more
+Does url missing dpened on vision score, does it depend on year
+
+### Missingness Dependency
+
+We are going to test if the `url` being missing depends on other columns. The two columns that we chose are `visionscore` and `year`. 
+
+First, we did a permutation test on `url` and `year`
+
+
+Null Hypothesis: The distribution of `year` when `url` is missing is the same as the distribution of `year` when `url` is not missing.
+
+Alternative Hypothesis: The distribution of `year` when `url` is missing is NOT same as the distribution of `year` when `url` is not missing.
+
+To test this, we chose a significance level of 0.05 and used Total Variation Distance (TVD) as our test statistic.
+
+
+|   year |   url_missing = False |   url_missing = True |
+|-------:|----------------------:|---------------------:|
+|   2017 |               0.05355 |              0       |
+|   2018 |               0.13197 |              0.0002  |
+|   2019 |               0.16778 |              0.00318 |
+|   2020 |               0.23576 |              0       |
+|   2021 |               0.27451 |              0.00478 |
+|   2022 |               0.05453 |              0.34432 |
+|   2023 |               0.04427 |              0.30901 |
+|   2024 |               0.03455 |              0.28155 |
+|   2025 |               0.00307 |              0.05695 |
+
+
+Our observed statistic using TVD 
+
+sample stat: 0.855
+
+
+The significance level we choose for both permutation tests is 0.5, and the test statistic is Total Variance Distance (TVD).
+
+First, we perform the permutation test on firstblood and league, and the missingness of firstblood does depend on league.
+
+
+
+
 
 ## Framing a Prediction Problem
 Can we accurately predict a team's vision score based solely on their in-game performance statistics?
