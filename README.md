@@ -97,8 +97,8 @@ One proposed reason for having higher vision score was because a winning team ha
 
 <iframe
   src="assets/bivariate_result_vision.html"
-  width="600"
-  height="400"
+  width="660"
+  height="440"
   frameborder="0"
 ></iframe>
 
