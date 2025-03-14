@@ -204,7 +204,7 @@ Again, we chose a significance level of 0.05 and used Total Variation Distance (
 <iframe
   src="assets/observed_bar_graph2.html"
   width="600"
-  height="300"
+  height="350"
   frameborder="0"
 ></iframe>
 Our observed statistic using TVD is 0.0016. After we performed our permutation tests, we found the p-value to be 0.545
@@ -214,7 +214,7 @@ Below is the empirical distribution of the TVD for the test.
 <iframe
   src="assets/url_more_vision_distribution.html"
   width="600"
-  height="300"
+  height="350"
   frameborder="0"
 ></iframe>
 Since the p-value is bigger than the 0.05 significance level, we fail to reject the null hypothesis. We conclude that the missingness of `url` does not depend on the `year` column.
@@ -236,7 +236,7 @@ Here is a histogram containing the distribution of our test statistics along wit
 <iframe
   src="assets/hypothesis_distribution.html"
   width="600"
-  height="300"
+  height="350"
   frameborder="0"
 ></iframe>
 Here is a zoom in on the graph of the absolute difference in means we found in our permutations:
@@ -244,7 +244,7 @@ Here is a zoom in on the graph of the absolute difference in means we found in o
 <iframe
   src="assets/hypothesis_distribution_zoom_in.html"
   width="600"
-  height="300"
+  height="350"
   frameborder="0"
 ></iframe>
 After we performed our permutation tests, we found the p-value to be 0.
