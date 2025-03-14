@@ -106,6 +106,8 @@ The plot shows that around 78% of the time, the team that has a higher `visionsc
 
 ### Interesting aggregates
 
+
+
 | more_vision   |     assists |   result |   wardsplaced |    wpm |   wardskilled |    wcpm |
 |:--------------|------------:|---------:|--------------:|-------:|--------------:|--------:|
 | False         | 1.82566e+06 |    17850 |   7.28174e+06 | 223902 |   3.11974e+06 | 94863.8 |
@@ -138,6 +140,7 @@ Alternative Hypothesis: The distribution of `year` when `url` is missing is NOT 
 
 To test this, we chose a significance level of 0.05 and used Total Variation Distance (TVD) as our test statistic.
 
+
 |   year |   url_missing = False |   url_missing = True |
 |-------:|----------------------:|---------------------:|
 |   2017 |               0.05355 |              0       |
@@ -149,32 +152,39 @@ To test this, we chose a significance level of 0.05 and used Total Variation Dis
 |   2023 |               0.04427 |              0.30901 |
 |   2024 |               0.03455 |              0.28155 |
 |   2025 |               0.00307 |              0.05695 |
+
+
 Here is a bar graph for easier observations:
+
 <iframe
   src="assets/observed_bar_graph.html"
-  width="800"
-  height="600"
   frameborder="0"
 ></iframe>
 Our observed statistic using TVD is 0.855. After we performed our permutation tests, we found the p-value to be 0.
 
 Below is the empirical distribution of the TVD for the test.
+
 <iframe
   src="assets/url_year_graph.html"
   width="800"
   height="600"
   frameborder="0"
 ></iframe>
+
 Here is a zoom in on the graph of the TVDs we found in our permutations.
+
 <iframe
   src="assets/zoomed_in_url_year_graph.html"
   width="800"
   height="600"
   frameborder="0"
 ></iframe>
+
 Since the p-value is less than the 0.05 significance level, we reject the null hypothesis. We conclude that the missingness of `url` depends on the `year` column.
 
+
 Next, we did a permutation test on `url` and the `more_vision` column we created earlier.
+
 
 Null Hypothesis: The distribution of `more_vision` when `url` is missing is the same as the distribution of `more_vision` when `url` is not missing.
 
@@ -182,10 +192,13 @@ Alternative Hypothesis: The distribution of `more_vision` when `url` is missing 
 
 Again, we chose a significance level of 0.05 and used Total Variation Distance (TVD) as our test statistic.
 
+
 | more_vision   |   url_missing = False |   url_missing = True |
 |:--------------|----------------------:|---------------------:|
 | False         |              0.525808 |             0.524212 |
 | True          |              0.474192 |             0.475788 |
+
+
 <iframe
   src="assets/observed_bar_graph2.html"
   width="800"
@@ -195,6 +208,7 @@ Again, we chose a significance level of 0.05 and used Total Variation Distance (
 Our observed statistic using TVD is 0.0016. After we performed our permutation tests, we found the p-value to be 0.545
 
 Below is the empirical distribution of the TVD for the test.
+
 <iframe
   src="assets/url_more_vision_distribution.html"
   width="800"
@@ -216,6 +230,7 @@ We are going to use absolute mean difference between the kills in teams with the
 Our observed test statistic was 0.415.
 
 Here is a histogram containing the distribution of our test statistics along with the observed statistic:
+
 <iframe
   src="assets/hypothesis_distribution.html"
   width="800"
@@ -223,6 +238,7 @@ Here is a histogram containing the distribution of our test statistics along wit
   frameborder="0"
 ></iframe>
 Here is a zoom in on the graph of the absolute difference in means we found in our permutations:
+
 <iframe
   src="assets/hypothesis_distribution_zoom_in.html"
   width="800"
@@ -240,17 +256,11 @@ For our prediction model, we will perform necessary preprocessing steps such as 
 
 To address this question, we will frame the problem as a regression task where the vision score is our response variable and is treated as a continuous variable. Our dataset includes the following columns:
 `assists`, `result`, `wardsplaced`, `wpm`, `wardskilled`, `wcpm`, `kills`, `controlwardsbought`, `visionscore`, `gamelength`, `more_kills`, and `more_vision`.
-
 Below is the head of DataFrame we are using in this section:
-
 cBought = `controlwardsbought`
-
 wPlaced = `wardsplaced`
-
 wSkilled = `wardskilled`
-
 mVision = `more_vision`
-
 mKills = `more_kills`
 
 <div style="text-align: center;">
