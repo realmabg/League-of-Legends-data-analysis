@@ -158,6 +158,8 @@ Here is a bar graph for easier observations:
 
 <iframe
   src="assets/observed_bar_graph.html"
+  width="600"
+  height="400"
   frameborder="0"
 ></iframe>
 Our observed statistic using TVD is 0.855. After we performed our permutation tests, we found the p-value to be 0.
