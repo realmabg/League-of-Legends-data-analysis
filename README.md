@@ -204,8 +204,8 @@ Again, we chose a significance level of 0.05 and used Total Variation Distance (
 
 <iframe
   src="assets/observed_bar_graph2.html"
-  width="800"
-  height="600"
+  width="600"
+  height="400"
   frameborder="0"
 ></iframe>
 
@@ -238,8 +238,8 @@ Here is a histogram containing the distribution of our test statistics along wit
 
 <iframe
   src="assets/hypothesis_distribution.html"
-  width="880"
-  height="660"
+  width="600"
+  height="400"
   frameborder="0"
 ></iframe>
 
@@ -247,8 +247,8 @@ Here is a zoom in on the graph of the absolute difference in means we found in o
 
 <iframe
   src="assets/hypothesis_distribution_zoom_in.html"
-  width="880"
-  height="660"
+  width="600"
+  height="400"
   frameborder="0"
 ></iframe>
 
