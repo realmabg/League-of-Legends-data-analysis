@@ -240,11 +240,17 @@ For our prediction model, we will perform necessary preprocessing steps such as 
 
 To address this question, we will frame the problem as a regression task where the vision score is our response variable and is treated as a continuous variable. Our dataset includes the following columns:
 `assists`, `result`, `wardsplaced`, `wpm`, `wardskilled`, `wcpm`, `kills`, `controlwardsbought`, `visionscore`, `gamelength`, `more_kills`, and `more_vision`.
+
 Below is the head of DataFrame we are using in this section:
+
 cBought = `controlwardsbought`
+
 wPlaced = `wardsplaced`
+
 wSkilled = `wardskilled`
+
 mVision = `more_vision`
+
 mKills = `more_kills`
 
 <div style="text-align: center;">
