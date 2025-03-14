@@ -162,6 +162,7 @@ Here is a bar graph for easier observations:
   height="400"
   frameborder="0"
 ></iframe>
+
 Our observed statistic using TVD is 0.855. After we performed our permutation tests, we found the p-value to be 0.
 
 Below is the empirical distribution of the TVD for the test.
@@ -203,10 +204,11 @@ Again, we chose a significance level of 0.05 and used Total Variation Distance (
 
 <iframe
   src="assets/observed_bar_graph2.html"
-  width="600"
-  height="550"
+  width="800"
+  height="600"
   frameborder="0"
 ></iframe>
+
 Our observed statistic using TVD is 0.0016. After we performed our permutation tests, we found the p-value to be 0.545
 
 Below is the empirical distribution of the TVD for the test.
@@ -214,9 +216,10 @@ Below is the empirical distribution of the TVD for the test.
 <iframe
   src="assets/url_more_vision_distribution.html"
   width="600"
-  height="500"
+  height="400"
   frameborder="0"
 ></iframe>
+
 Since the p-value is bigger than the 0.05 significance level, we fail to reject the null hypothesis. We conclude that the missingness of `url` does not depend on the `year` column.
 
 ## Hypothesis Testing
@@ -235,18 +238,20 @@ Here is a histogram containing the distribution of our test statistics along wit
 
 <iframe
   src="assets/hypothesis_distribution.html"
-  width="600"
-  height="450"
+  width="880"
+  height="660"
   frameborder="0"
 ></iframe>
+
 Here is a zoom in on the graph of the absolute difference in means we found in our permutations:
 
 <iframe
   src="assets/hypothesis_distribution_zoom_in.html"
-  width="600"
-  height="400"
+  width="880"
+  height="660"
   frameborder="0"
 ></iframe>
+
 After we performed our permutation tests, we found the p-value to be 0.
 
 Since the p-value is smaller than the 0.05 significance level, we reject the null hypothesis. There is statistical evidence to suggest that the distribution of kills for the team with the higher vision score is NOT the same as the team with the lower vision score. This finding tekks us to consider that having a higher vision score than the other team can result in an advantage in a League of Legends game, and ultimately winning.
