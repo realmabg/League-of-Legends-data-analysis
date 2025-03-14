@@ -65,6 +65,8 @@ There were also two new columns that we made ourselves: `more_vision` and `more_
 
 Along with this, we also made `result` a boolean value, with a 1 (win) becoming True and 0 (a loss) being false.
 
+`Todo: add the head of cleaned datafam`
+
 ### Univariate Analysis
 
 We performed univariate analysis on both `kills` and `visionscore`.
